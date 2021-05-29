@@ -120,7 +120,7 @@ function render() {
     });
 }
 function movePointer(x, y) {
-    if (typeof pointerX === "number" && typeof pointerY === "number") {
+    if (Number.isFinite(pointerX) && Number.isFinite(pointerY)) {
         let ox = x - pointerX, oy = y - pointerY;
         velocity.tx = velocity.tx + (ox / 8) * scale * (touchInput ? 1 : -1);
         velocity.ty = velocity.ty + (oy / 8) * scale * (touchInput ? 1 : -1);
